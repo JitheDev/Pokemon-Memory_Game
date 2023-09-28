@@ -3,12 +3,12 @@ import './App.css';
 import SingleCard from './components/SingleCard';
 
 const cardImages = [
-  {"src": "/images/bulbasaur.png"},
-  {"src": "/images/Charmander.png"},
-  {"src": "/images/eevee.png"},
-  {"src": "/images/pikachu.png"},
-  {"src": "/images/psyduck.png"},
-  {"src": "/images/squirtle.png"}
+  {"src": "/images/bulbasaur.png", matched: false},
+  {"src": "/images/Charmander.png", matched: false},
+  {"src": "/images/eevee.png", matched: false},
+  {"src": "/images/pikachu.png", matched: false},
+  {"src": "/images/psyduck.png", matched: false},
+  {"src": "/images/squirtle.png", matched: false}
 ]
 
 function App() {
@@ -32,18 +32,27 @@ const handleChoice = (card) => {
   choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
 }
 
-//compare 2 seelcted cards
+//compare 2 selected cards
 useEffect(() => {
   if (choiceOne && choiceTwo) {
     if (choiceOne.src === choiceTwo.src) {
-      console.log('Those cards match')
+      setCards(prevCards => {
+        return prevCards.map(card => {
+          if (card.src === choiceOne.src) {
+            return {...card, matched: true}
+          } else {
+            return card
+          }
+        })
+      })
       resetTurn()
     } else {
-      console.log('Those cards do not match')
       resetTurn()
     }
   }
 }, [choiceOne, choiceTwo])
+
+console.log(cards)
 
 //reset choices & increase turn
 const resetTurn = () => {
