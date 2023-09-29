@@ -2,6 +2,7 @@
   max-width: 860px;
   margin: 40px auto;
 }
+
 button {
   background: none;
   border: 2px solid #fff;
@@ -25,14 +26,15 @@ button:hover {
   grid-gap: 20px;
 }
 
+/* Add media query for mobile and tablet screens */
 @media (max-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(3,1fr);
+  .App {
+    margin: 20px auto;
+    padding: 10px;
   }
-}
 
-@media (max-width: 468px) {
   .card-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust card size for smaller screens */
+    grid-gap: 5px; /* Reduce grid gap for smaller screens */
   }
 }
