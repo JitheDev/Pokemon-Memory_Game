@@ -8,7 +8,7 @@ Want to give it a go? [Give It A Shot!](https://memorizeyourpokemon.netlify.app/
 * Randomized card positions to provide a new challenge each time.
 * A Turns counter to keep track of your performance.
 * Game reset functionality to play again.
-![Starting Game Board](\README_images\Starting_The_Game.png)
+![Starting Game Board](/src/README_images/Starting_The_Game.png)
 
 ## Getting Started
 Before you start playing the Pokémon Memory Card Game, make sure you have the following prerequisites:
@@ -40,6 +40,6 @@ npm run start
 3. Click on any two cards to flip them over and reveal the Pokémon images.
 
 4. Try to match pairs of Pokémon cards.
-![Two Flipped Cards](\README_images\Two_Flipped_Cards.png)
+![Two Flipped Cards](/src/README_images/Two_Flipped_Cards.png)
 5. The game keeps track of the number of moves you make.
 6. When you've matched all pairs, you win! You can choose to reset the game using the New Game button.
