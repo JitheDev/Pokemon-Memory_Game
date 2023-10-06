@@ -26,15 +26,27 @@ button:hover {
   grid-gap: 20px;
 }
 
-/* Add media query for mobile and tablet screens */
-@media (max-width: 768px) {
-  .App {
-    margin: 20px auto;
-    padding: 10px;
-  }
-
+/* Responsive styles for grid */
+@media screen and (max-width: 640px) {
   .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Adjust card size for smaller screens */
-    grid-gap: 5px; /* Reduce grid gap for smaller screens */
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1280px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
